@@ -101,7 +101,7 @@ async function sendMessage() {
   history.push({role:'user',content:text});
   addMsg('user',text); showTyping();
   try {
-    const res=await fetch('http://localhost:5000/api/chat',{
+    const res=await fetch('https://fintech-ai-1.onrender.com/api/chat',{
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({model:'claude-3-sonnet-20240229',system:SYS,messages:history})
     });
